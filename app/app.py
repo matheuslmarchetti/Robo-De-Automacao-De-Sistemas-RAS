@@ -26,7 +26,7 @@ pyautogui.write('Aplicativos: SIFAR.exe')
 time.sleep(1)
 pyautogui.press('backspace')
 pyautogui.press('enter')
-time.sleep(2)
+time.sleep(5)
 # Cadastrar usuário
 pyautogui.click(708, 399)
 pyautogui.write('matheus')
@@ -56,6 +56,19 @@ with open('../script_de_comandos/comandos.txt', 'r') as arquivo:
         pyautogui.write(data)
 
         pyautogui.click(314, 525, duration=1)
+        # Acesso ao diretório onde os arquivos foram enviados por padrão
+        caminho_EMS = r'C:\Users\lungu\OneDrive\Documentos\dev\EMS'
+        caminhos_Destino = r'C:\Users\lungu\OneDrive\Documentos\dev\Destino'
+        print(os.listdir(caminho_EMS))
+        lista_arquivos = os.listdir(caminho_EMS)
+
+        for arquivos in lista_arquivos:
+            if ".txt" and "ENERGISA" in arquivos:
+                # mover
+                os.rename(f'{caminho_EMS}/{arquivos}', f'{caminhos_Destino}/{agrupamento}/{sub_agrupamento}/{arquivos}')
+        # if sub_agrupamento = 1 - Campo Grande
+        # posso criar um código também que rode dentro da pasta destino com os comandos de cada uc na sub pasta correta
+        # Mover os arquivos para diretório destino
         time.sleep(1)
 pyautogui.click(378, 525)
 # Mensagem de finalização do processo de automação
