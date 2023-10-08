@@ -39,6 +39,25 @@ pyautogui.write('matheus')
 pyautogui.press('tab')
 pyautogui.write('123')
 pyautogui.click(591, 381)
+# Entrada de dados
+with open('../script_de_comandos/comandos.txt', 'r') as arquivo:
+    for linha in arquivo:
+        agrupamento = linha.split(',')[0]
+        sub_agrupamento = linha.split(',')[1]
+        data = linha.split(',')[2]
+
+        pyautogui.click(393, 318, duration=1)
+        pyautogui.write(agrupamento)
+
+        pyautogui.click(390, 343, duration=1)
+        pyautogui.write(sub_agrupamento)
+
+        pyautogui.click(387, 371, duration=1)
+        pyautogui.write(data)
+
+        pyautogui.click(314, 525, duration=1)
+        time.sleep(1)
+pyautogui.click(378, 525)
 # Mensagem de finalização do processo de automação
 pyautogui.alert("""
     Processo de automação concluído!
