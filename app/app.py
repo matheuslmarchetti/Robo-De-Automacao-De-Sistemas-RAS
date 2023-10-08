@@ -22,10 +22,23 @@ pyautogui.hotkey('ctrl', 'winleft', 'right')
 time.sleep(1)
 # Pesquisar pela aplicação e abir
 pyautogui.press('winleft')
-pyautogui.write('app.exe')
+pyautogui.write('Aplicativos: SIFAR.exe')
+time.sleep(1)
 pyautogui.press('backspace')
 pyautogui.press('enter')
 time.sleep(2)
+# Cadastrar usuário
+pyautogui.click(708, 399)
+pyautogui.write('matheus')
+pyautogui.press('tab')
+pyautogui.write('123')
+pyautogui.click(708, 399)
+time.sleep(1)
+# Entrar com usuário e senha
+pyautogui.write('matheus')
+pyautogui.press('tab')
+pyautogui.write('123')
+pyautogui.click(591, 381)
 # Mensagem de finalização do processo de automação
 pyautogui.alert("""
     Processo de automação concluído!
