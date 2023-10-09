@@ -2,6 +2,9 @@ import pyautogui
 import os
 import time
 
+# Declaração de variáveis do sistema
+user = "lungu"
+# primeira data no SIFAR 01/01/1900 e a última é a data atual de acesso no sistema
 # Mensagem de alerta para iniciar RAS
 pyautogui.alert("""
     Bem-Vindo ao RAS - (Robô de Automação de Sistemas)
@@ -57,8 +60,8 @@ with open('../script_de_comandos/comandos.txt', 'r') as arquivo:
 
         pyautogui.click(314, 525, duration=1)
         # Acesso ao diretório onde os arquivos foram enviados por padrão
-        caminho_EMS = r'C:\Users\lungu\OneDrive\Documentos\dev\EMS'
-        caminhos_Destino = r'C:\Users\lungu\OneDrive\Documentos\dev\Destino'
+        caminho_EMS = fr'C:\Users\{user}\OneDrive\Documentos\dev\EMS'
+        caminhos_Destino = fr'C:\Users\{user}\OneDrive\Documentos\dev\Destino'
         print(os.listdir(caminho_EMS))
         lista_arquivos = os.listdir(caminho_EMS)
 
