@@ -43,7 +43,7 @@ pyautogui.press('tab')
 pyautogui.write('123')
 pyautogui.click(591, 381)
 # Entrada de dados
-with open('../script_de_comandos/comandos.txt', 'r') as arquivo:
+with open('comandos.txt') as arquivo:
     for linha in arquivo:
         agrupamento = linha.split(',')[0]
         sub_agrupamento = linha.split(',')[1]
